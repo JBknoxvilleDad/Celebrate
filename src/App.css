@@ -10,3 +10,7 @@ body {
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
 }
+.upload-btn {
+  color: aquamarine;
+  background-color: rgba(0, 0, 0, 1);
+}

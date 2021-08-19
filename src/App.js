@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, useState, useRef } from "react";
 import { Navbar, NavbarBrand } from "reactstrap";
 import Directory from "./components/DirectoryComponent";
 import { CARDS } from "./shared/cards";
 import {
+  Button,
   Card,
   CardImg,
   CardImgOverlay,
@@ -11,6 +12,7 @@ import {
   CardTitle,
 } from "reactstrap";
 import "./App.css";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -25,8 +27,26 @@ class App extends Component {
       file: URL.createObjectURL(event.target.files[0]),
     });
   }
-
   render() {
+    const FileInputWithButton = () => {
+      const fileInput = useRef(null);
+      return (
+        <div>
+          <input
+            type="file"
+            ref={fileInput}
+            style={{ display: "none" }}
+            onChange={this.handleChange}
+          />
+          <Button
+            className="upload-btn"
+            onClick={() => fileInput.current.click()}
+          >
+            Choose File
+          </Button>
+        </div>
+      );
+    };
     return (
       <div className="App">
         <Navbar dark color="primary">
@@ -35,8 +55,8 @@ class App extends Component {
           </div>
         </Navbar>
         <Directory cards={this.state.cards} />
-        <input type="file" onChange={this.handleChange} />
-        <div className="conatiner">
+        <FileInputWithButton />
+        <div className="container">
           <div className="row">
             <div className="col-md-3"></div>
             <div className="col-md-5 m-1 align-item-center">
