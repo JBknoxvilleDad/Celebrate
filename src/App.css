@@ -13,4 +13,21 @@ body {
 .upload-btn {
   color: aquamarine;
   background-color: rgba(0, 0, 0, 1);
+  justify-content: center;
+  align-self: center;
+}
+.card {
+  width: 425px;
+  height: 417px;
+  padding: 45px;
+  margin-top: 40px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 15px 10px 25px 0px #3fa1a9;
+  background: rgb(127, 73, 228);
+  background-repeat: no-repeat, no-repeat;
+  background-position: 120% -5%, 200% -40%;
+  background-size: 40%, 80%;
+  animation: open 0.5s;
 }

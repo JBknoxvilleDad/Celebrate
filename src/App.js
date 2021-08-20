@@ -31,19 +31,25 @@ class App extends Component {
     const FileInputWithButton = () => {
       const fileInput = useRef(null);
       return (
-        <div>
-          <input
-            type="file"
-            ref={fileInput}
-            style={{ display: "none" }}
-            onChange={this.handleChange}
-          />
-          <Button
-            className="upload-btn"
-            onClick={() => fileInput.current.click()}
-          >
-            Choose File
-          </Button>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-5">
+              <input
+                type="file"
+                ref={fileInput}
+                style={{ display: "none" }}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div>
+              <Button
+                className="upload-btn"
+                onClick={() => fileInput.current.click()}
+              >
+                Choose File
+              </Button>
+            </div>
+          </div>
         </div>
       );
     };
@@ -62,7 +68,10 @@ class App extends Component {
             <div className="col-md-5 m-1 align-item-center">
               <Card>
                 <CardImg width="100%" src={this.state.file} />
-                <CardImgOverlay></CardImgOverlay>
+
+                <CardImgOverlay>
+                  <CardImg width="100%" src="assets/overlays/xmasborder4.png" />
+                </CardImgOverlay>
               </Card>
             </div>
           </div>
