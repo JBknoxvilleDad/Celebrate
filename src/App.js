@@ -1,5 +1,5 @@
 import React, { Component, useState, useRef } from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
+import Header from "./components/Header";
 import Directory from "./components/DirectoryComponent";
 import { CARDS } from "./shared/cards";
 import {
@@ -12,6 +12,7 @@ import {
   CardTitle,
 } from "reactstrap";
 import "./App.css";
+import { BrowserRouter } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -33,7 +34,10 @@ class App extends Component {
       return (
         <div className="container">
           <div className="row">
-            <div className="col-md-5">
+            <hr />
+          </div>
+          <div className="row">
+            <div className="col-md-3">
               <input
                 type="file"
                 ref={fileInput}
@@ -43,7 +47,8 @@ class App extends Component {
             </div>
             <div>
               <Button
-                className="upload-btn"
+                size="lg"
+                color="success"
                 onClick={() => fileInput.current.click()}
               >
                 Choose File
@@ -54,29 +59,30 @@ class App extends Component {
       );
     };
     return (
-      <div className="App">
-        <Navbar dark color="primary">
+      <BrowserRouter>
+        <div className="App">
+          <Header />
+          <Directory cards={this.state.cards} />
+          <FileInputWithButton />
           <div className="container">
-            <NavbarBrand href="/">Celebration</NavbarBrand>
-          </div>
-        </Navbar>
-        <Directory cards={this.state.cards} />
-        <FileInputWithButton />
-        <div className="container">
-          <div className="row">
-            <div className="col-md-3"></div>
-            <div className="col-md-5 m-1 align-item-center">
-              <Card>
-                <CardImg width="100%" src={this.state.file} />
+            <div className="row">
+              <div className="col-md-3"></div>
+              <div className="col-md-5 m-1 align-item-center">
+                <Card>
+                  <CardImg width="100%" src={this.state.file} />
 
-                <CardImgOverlay>
-                  <CardImg width="100%" src="assets/overlays/xmasborder4.png" />
-                </CardImgOverlay>
-              </Card>
+                  <CardImgOverlay>
+                    <CardImg
+                      width="100%"
+                      src="assets/overlays/xmasborder4.png"
+                    />
+                  </CardImgOverlay>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }

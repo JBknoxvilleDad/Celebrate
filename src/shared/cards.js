@@ -23,4 +23,16 @@ export const CARDS = [
     image: "assets/images/4.jpg",
     description: "Navy Blue with gold trim, Happy Retirement.",
   },
+  {
+    id: 4,
+    name: "Independence Day 1",
+    image: "assets/images/5.jpg",
+    description: "Black backgroud with flags and 4th.",
+  },
+  {
+    id: 5,
+    name: "Halloween 1",
+    image: "assets/images/6.jfif",
+    description: "Ghost lollipops and candy corn on black matte.",
+  },
 ];

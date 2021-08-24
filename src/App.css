@@ -2,14 +2,43 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+h1,
+h2,
+h3,
+.card-body > .card-title {
+  font-family: "Lobster", cursive;
+}
+h1 {
+  margin: 0;
+}
 .card-title {
-  font: 500 1.25rem "Lobster", cursive;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+.wide-group {
+  margin: 0px;
+  padding: 0px;
+}
+h2 {
+  color: #3046c5;
 }
 
 .card-img-overlay .card-title {
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+.row-content {
+  padding: 50px 0;
+  border-bottom: 1px ridge;
+  min-height: 200px;
+}
+
+.site-footer {
+  background-image: linear-gradient(#cec8ff, white);
+  padding: 20px 0;
+}
+
 .upload-btn {
   color: aquamarine;
   background-color: rgba(0, 0, 0, 1);
@@ -17,10 +46,8 @@ body {
   align-self: center;
 }
 .card {
-  width: 425px;
+  width: 318px;
   height: 417px;
-  padding: 45px;
-  margin-top: 40px;
   border-radius: 25px;
   display: flex;
   justify-content: center;
@@ -30,4 +57,24 @@ body {
   background-position: 120% -5%, 200% -40%;
   background-size: 40%, 80%;
   animation: open 0.5s;
+}
+.jumbotron {
+  margin: 0;
+  padding: 30px;
+  background-image: linear-gradient(to right, #5637dd, #3046c5, #60106b);
+  color: white;
+  margin-bottom: 0px !important;
+  padding-bottom: 0px;
+}
+
+.jumbotron h2 {
+  color: #cec8ff;
+}
+
+.navbar-dark {
+  background-color: #901cad;
+}
+.navbar {
+  margin-bottom: 0;
+  padding: 0;
 }
