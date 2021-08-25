@@ -13,6 +13,7 @@ import {
 } from "reactstrap";
 import "./App.css";
 import { BrowserRouter } from "react-router-dom";
+import ChooseFile from "./components/ChooseFileComponent";
 
 class App extends Component {
   constructor(props) {
@@ -21,66 +22,15 @@ class App extends Component {
       cards: CARDS,
       file: null,
     };
-    this.handleChange = this.handleChange.bind(this);
   }
-  handleChange(event) {
-    this.setState({
-      file: URL.createObjectURL(event.target.files[0]),
-    });
-  }
+
   render() {
-    const FileInputWithButton = () => {
-      const fileInput = useRef(null);
-      return (
-        <div className="container">
-          <div className="row">
-            <hr />
-          </div>
-          <div className="row">
-            <div className="col-md-3">
-              <input
-                type="file"
-                ref={fileInput}
-                style={{ display: "none" }}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <Button
-                size="lg"
-                color="success"
-                onClick={() => fileInput.current.click()}
-              >
-                Choose File
-              </Button>
-            </div>
-          </div>
-        </div>
-      );
-    };
     return (
       <BrowserRouter>
         <div className="App">
           <Header />
           <Directory cards={this.state.cards} />
-          <FileInputWithButton />
-          <div className="container">
-            <div className="row">
-              <div className="col-md-3"></div>
-              <div className="col-md-5 m-1 align-item-center">
-                <Card>
-                  <CardImg width="100%" src={this.state.file} />
-
-                  <CardImgOverlay>
-                    <CardImg
-                      width="100%"
-                      src="assets/overlays/xmasborder4.png"
-                    />
-                  </CardImgOverlay>
-                </Card>
-              </div>
-            </div>
-          </div>
+          <ChooseFile />
         </div>
       </BrowserRouter>
     );

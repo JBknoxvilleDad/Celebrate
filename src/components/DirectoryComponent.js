@@ -24,7 +24,9 @@ class Directory extends Component {
             <CardBody>
               <CardTitle tag="h5">{card.name}</CardTitle>
               <CardText>{card.description}</CardText>
-              <Button>Pick Me!</Button>
+              <Button color="secondary" block>
+                Pick Me!
+              </Button>
             </CardBody>
           </Card>
         </CardGroup>

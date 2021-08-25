@@ -96,7 +96,7 @@ class Header extends Component {
                 </NavItem>
               </Nav>
               <span className="navbar-text ml-auto">
-                <Button outline onClick={this.toggleModal}>
+                <Button color="primary" onClick={this.toggleModal}>
                   <i className="fa fa-sign-in fa-lg" /> Login
                 </Button>
               </span>
@@ -135,7 +135,7 @@ class Header extends Component {
                   Remember Me
                 </Label>
               </FormGroup>
-              <Button type="submit" value="submit" color="danger">
+              <Button type="submit" value="submit" color="success">
                 Login
               </Button>
             </Form>
