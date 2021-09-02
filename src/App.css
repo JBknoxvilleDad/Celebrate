@@ -58,6 +58,10 @@ h2 {
   background-size: 40%, 80%;
   animation: open 0.5s;
 }
+.inputCard{
+  width: 400px;
+  height: 510px;
+}
 .jumbotron {
   margin: 0;
   padding: 30px;
