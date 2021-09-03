@@ -10,6 +10,7 @@ export const CARDS = [
     name: "Christmas 2",
     image: "assets/images/2.jpg",
     description: "Black framed classic look, Merry Christmas.",
+    border: "assets/overlays/xmasborder4.png",
   },
   {
     id: 2,

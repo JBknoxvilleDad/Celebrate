@@ -1,16 +1,6 @@
-import React, { Component, useState, useRef } from "react";
-import {
-  Button,
-  Card,
-  CardImg,
-  CardImgOverlay,
-  CardText,
-  CardBody,
-  CardTitle,
-} from "reactstrap";
+import React, { Component, useRef } from "react";
+import { Button, Card } from "reactstrap";
 import AvatarEditor from "react-avatar-editor";
-import Select from "react-select";
-
 class ChooseFile extends Component {
   constructor(props) {
     super(props);
@@ -27,13 +17,9 @@ class ChooseFile extends Component {
   }
 
   render() {
-    const options = [
-      { value: "Borders", label: "Choose a Border" },
-      { value: "assets/overlays/xmasborder4.png", label: "Christmas" },
-    ];
-
     const FileInputWithButton = () => {
       const fileInput = useRef(null);
+      const border = this.props.border;
       return (
         <div className="container">
           <div className="row">
@@ -55,7 +41,7 @@ class ChooseFile extends Component {
             >
               ** Choose Picture for Postcard **
             </Button>
-            <Select defaultValue={options[0]} options={options} />
+            <img src={border} />
           </div>
         </div>
       );
@@ -63,7 +49,9 @@ class ChooseFile extends Component {
     return (
       <div className="container">
         <div className="row">
-          <FileInputWithButton />
+          <div className="col-md-12">
+            <FileInputWithButton />
+          </div>
           <div className="container">
             <div className="row">
               <div className="col-md-3"></div>
@@ -87,7 +75,7 @@ class ChooseFile extends Component {
                     <img
                       className="image1"
                       width="100%"
-                      src="assets/overlays/xmasborder4.png"
+                      src={this.state.selectedBorder}
                     />
                   </div>
                 </Card>

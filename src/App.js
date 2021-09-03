@@ -1,5 +1,6 @@
 import React, { Component, useState, useRef } from "react";
 import Header from "./components/Header";
+import Footer from "./components/FooterComponent";
 import Directory from "./components/DirectoryComponent";
 import { CARDS } from "./shared/cards";
 import {
@@ -21,6 +22,7 @@ class App extends Component {
     this.state = {
       cards: CARDS,
       file: null,
+      border: null,
     };
   }
 
@@ -30,7 +32,8 @@ class App extends Component {
         <div className="App">
           <Header />
           <Directory cards={this.state.cards} />
-          <ChooseFile />
+          <ChooseFile border={this.state.border} />
+          <Footer />
         </div>
       </BrowserRouter>
     );

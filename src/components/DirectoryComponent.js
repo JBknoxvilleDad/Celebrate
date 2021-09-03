@@ -13,7 +13,10 @@ import {
 class Directory extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    this.props.onchange({ border: this.card.border });
   }
   render() {
     const directory = this.props.cards.map((card) => {
@@ -24,7 +27,7 @@ class Directory extends Component {
             <CardBody>
               <CardTitle tag="h5">{card.name}</CardTitle>
               <CardText>{card.description}</CardText>
-              <Button color="secondary" block>
+              <Button color="secondary" block onclick={this.handleClick}>
                 Pick Me!
               </Button>
             </CardBody>
