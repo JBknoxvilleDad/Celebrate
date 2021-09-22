@@ -1,11 +1,21 @@
 import React, { Component, useRef } from "react";
-import { Button, Card } from "reactstrap";
-import AvatarEditor from "react-avatar-editor";
+import { Button, Card, CardImg } from "reactstrap";
+import ReactAvatarEditor from "react-avatar-editor";
+
 class ChooseFile extends Component {
   constructor(props) {
     super(props);
     this.state = {
       file: null,
+      image: "avatar.jpg",
+      allowZoomOut: false,
+      position: { x: 0, y: 0 },
+      scale: 1,
+      rotate: 0,
+      borderRadius: 0,
+      preview: null,
+      width: 350,
+      height: 200,
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -15,6 +25,18 @@ class ChooseFile extends Component {
       file: URL.createObjectURL(event.target.files[0]),
     });
   }
+  handleNewImage = (e) => {
+    this.setState({ image: e.target.files[0] });
+  };
+
+  handleScale = (e) => {
+    const scale = parseFloat(e.target.value);
+    this.setState({ scale });
+  };
+
+  handlePositionChange = (position) => {
+    this.setState({ position });
+  };
 
   render() {
     const FileInputWithButton = () => {
@@ -41,7 +63,6 @@ class ChooseFile extends Component {
             >
               ** Choose Picture for Postcard **
             </Button>
-            <img src={border} />
           </div>
         </div>
       );
@@ -57,28 +78,31 @@ class ChooseFile extends Component {
               <div className="col-md-3"></div>
               <div className="col-md-5 m-1 align-item-center">
                 <Card className="inputCard" body inverse color="primary">
-                  <div
-                    className="parent"
-                    style={{
-                      height: "350px",
-                      width: "350px",
-                    }}
-                  >
-                    <AvatarEditor
-                      image={this.state.file}
-                      width={250}
-                      height={250}
-                      border={50}
-                      scale={1}
-                      rotate={0}
-                    />
-                    <img
-                      className="image1"
-                      width="100%"
-                      src={this.state.selectedBorder}
-                    />
-                  </div>
+                  <ReactAvatarEditor
+                    scale={parseFloat(this.state.scale)}
+                    width={this.state.width}
+                    height={this.state.height}
+                    position={this.state.position}
+                    onPositionChange={this.handlePositionChange}
+                    rotate={parseFloat(this.state.rotate)}
+                    borderRadius={
+                      this.state.width / (100 / this.state.borderRadius)
+                    }
+                    image={this.state.file}
+                    className="editor-canvas"
+                  />
+                  <img src={this.props.border} className="clsFirstImg" />
                 </Card>
+                Zoom:
+                <input
+                  name="scale"
+                  type="range"
+                  onChange={this.handleScale}
+                  min={this.state.allowZoomOut ? "0.1" : "1"}
+                  max="2"
+                  step="0.01"
+                  defaultValue="1"
+                />
               </div>
             </div>
           </div>

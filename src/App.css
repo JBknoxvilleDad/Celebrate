@@ -46,7 +46,7 @@ h2 {
   align-self: center;
 }
 .card {
-  width: 318px;
+  width: 350px;
   height: 417px;
   border-radius: 25px;
   display: flex;
@@ -58,9 +58,9 @@ h2 {
   background-size: 40%, 80%;
   animation: open 0.5s;
 }
-.inputCard{
-  width: 400px;
-  height: 510px;
+.inputCard {
+  width: 450px;
+  height: 477px;
 }
 .jumbotron {
   margin: 0;
@@ -83,20 +83,23 @@ h2 {
   padding: 0;
 }
 .parent {
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
 }
-.image1 {
+.clsFirstImg {
   position: absolute;
-  top: 0;
+  width: 450px;
+  top: 70px;
   left: 0;
   margin: 0;
   padding: 0;
 }
-.image2 {
+.clsSecondImg {
   position: relative;
-  top: 0;
+  top: -40px;
+  width: 350px;
+
   left: 0;
   margin: 0;
   padding: 0;

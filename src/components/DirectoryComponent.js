@@ -7,37 +7,37 @@ import {
   CardTitle,
   CardGroup,
   Button,
-  Container,
 } from "reactstrap";
-
 class Directory extends Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick() {
-    this.props.onchange({ border: this.card.border });
   }
   render() {
     const directory = this.props.cards.map((card) => {
       return (
-        <CardGroup className="wide-group">
-          <Card body inverse color="primary">
-            <CardImg top width="100%" src={card.image} alt={card.name} />
-            <CardBody>
-              <CardTitle tag="h5">{card.name}</CardTitle>
-              <CardText>{card.description}</CardText>
-              <Button color="secondary" block onclick={this.handleClick}>
-                Pick Me!
-              </Button>
-            </CardBody>
-          </Card>
-        </CardGroup>
+        <div key={card.id}>
+          <CardGroup>
+            <Card body inverse color="primary">
+              <CardImg top width="100%" src={card.image} alt={card.name} />
+              <CardBody>
+                <CardTitle tag="h5">{card.name}</CardTitle>
+                <CardText>{card.description}</CardText>
+                <Button
+                  color="secondary"
+                  block
+                  onClick={() => this.props.action(card)}
+                >
+                  Pick Me!
+                </Button>
+              </CardBody>
+            </Card>
+          </CardGroup>
+        </div>
       );
     });
 
     return (
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">{directory}</div>
       </div>
     );
