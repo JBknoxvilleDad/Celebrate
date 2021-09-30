@@ -68,9 +68,12 @@ class ChooseFile extends Component {
       );
     };
     return (
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-md-2">
+            <b>Step 2</b>
+          </div>
+          <div className="col-md-8">
             <FileInputWithButton />
           </div>
           <div className="container">

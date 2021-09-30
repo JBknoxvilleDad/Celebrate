@@ -36,4 +36,28 @@ export const CARDS = [
     image: "assets/images/6.jfif",
     description: "Ghost lollipops and candy corn on black matte.",
   },
+  {
+    id: 6,
+    name: "Hanukkah 1",
+    image: "assets/images/7.jpg",
+    description: "Celebrate the Hanukkah Season.",
+  },
+  {
+    id: 8,
+    name: "Baby Coming 1",
+    image: "assets/images/8.jfif",
+    description: "Celebrate the new addition.",
+  },
+  {
+    id: 9,
+    name: "Baby Coming 1",
+    image: "assets/images/9.jfif",
+    description: "Celebrate the new addition.",
+  },
+  {
+    id: 10,
+    name: "Thanksgiving 1",
+    image: "assets/images/10.jfif",
+    description: "Give some Thanks.",
+  },
 ];

@@ -38,7 +38,8 @@ class Directory extends Component {
 
     return (
       <div className="container-fluid">
-        <div className="row">{directory}</div>
+        <b>Step 1</b>
+        <div className="row ml-5">{directory}</div>
       </div>
     );
   }

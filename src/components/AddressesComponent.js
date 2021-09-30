@@ -5,11 +5,21 @@ const addressesArray = [];
 class NewRecipient extends Component {
   constructor() {
     super();
+
     this.state = {
       contacts: addressesArray,
     };
-
+    this.baseState = this.state;
+    this.sentCards = this.sentCards.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  resetForm = () => {
+    this.setState(this.baseState);
+    this.sentCards();
+  };
+
+  sentCards() {
+    alert("Cards are being sent!");
   }
 
   handleSubmit(e) {
@@ -51,16 +61,20 @@ class NewRecipient extends Component {
     console.log("message", this.state.contacts);
 
     return (
-      <div className="container">
-        <div className="row">
+      <div className="container-fluid">
+        <b>Step 3</b>
+        <div className="row ml-3">
           <div className="col-sm-4">
             <h2>Add a Recipient</h2>
           </div>
-          <div className="col-sm-7">
+          <div className="col-sm-4">
             <h2>People That Deserve Postcards</h2>
           </div>
+          <div className="col-sm-4">
+            <h2>Send Some Love Their Way!</h2>
+          </div>
         </div>
-        <div className="row">
+        <div className="row ml-3">
           <div className="col-sm-5">
             <Form onSubmit={this.handleSubmit}>
               <Row className="form-group">
@@ -104,7 +118,7 @@ class NewRecipient extends Component {
               </Button>
             </Form>
           </div>
-          <div className="col-md-6">
+          <div className="col-sm-3">
             <ul className="list">
               {contacts.map((contact) => (
                 <li>
@@ -116,6 +130,11 @@ class NewRecipient extends Component {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className="col-sm-4 mt-5">
+            <Button onClick={this.resetForm} color="success">
+              Send those cards!!
+            </Button>
           </div>
         </div>
       </div>
