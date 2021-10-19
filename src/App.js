@@ -32,8 +32,8 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Header />
-          <Directory action={this.handler} cards={this.state.cards} />
           <ChooseFile border={this.state.border} />
+          <Directory action={this.handler} cards={this.state.cards} />
           <NewRecipient />
           <Footer />
         </div>

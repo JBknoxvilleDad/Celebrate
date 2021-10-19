@@ -71,7 +71,7 @@ class ChooseFile extends Component {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-2">
-            <b>Step 2</b>
+            <b>Step 1</b>
           </div>
           <div className="col-md-8">
             <FileInputWithButton />

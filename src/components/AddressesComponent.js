@@ -18,10 +18,6 @@ class NewRecipient extends Component {
     this.sentCards();
   };
 
-  sentCards() {
-    alert("Cards are being sent!");
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     const { contacts } = this.state,
@@ -55,7 +51,13 @@ class NewRecipient extends Component {
       }
     );
   }
-
+  sentCards() {
+    alert(
+      `Cards are being sent to + ${JSON.stringify(
+        this.state.contacts.firstName
+      )} + !`
+    );
+  }
   render() {
     const { contacts } = this.state;
     console.log("message", this.state.contacts);
@@ -121,7 +123,7 @@ class NewRecipient extends Component {
           <div className="col-sm-3">
             <ul className="list">
               {contacts.map((contact) => (
-                <li>
+                <li key={contact.address}>
                   {` ${contact.firstName} ${contact.lastName}`}
                   <br />
                   {` ${contact.address}`}
