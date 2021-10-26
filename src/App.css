@@ -2,6 +2,10 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+d {
+  color: rgb(209, 76, 24);
+}
+
 h1,
 h2,
 h3,
@@ -12,10 +16,23 @@ h4,
 h1 {
   margin: 0;
 }
+h3 {
+  text-shadow: -3px 2px 2px #0a0303;
+  color: rgba(245, 41, 119, 0.931);
+}
+
 b {
   font-size: 40px;
   font-family: "Comic Sans MS", Times, serif;
   color: rgba(247, 234, 63, 0.931);
+  text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+c {
+  font-size: 50px;
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif,
+    Helvetica, sans-serif;
+  color: rgba(245, 41, 119, 0.931);
   text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
 }

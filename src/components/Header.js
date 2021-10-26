@@ -80,8 +80,8 @@ class Header extends Component {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-link" to="/directory">
-                    <i className="fa fa-list fa-lg" /> Directory
+                  <NavLink className="nav-link" to="/picturepostcard">
+                    <i className="fa fa-list fa-lg" /> Pic Postcard
                   </NavLink>
                 </NavItem>
                 <NavItem>
