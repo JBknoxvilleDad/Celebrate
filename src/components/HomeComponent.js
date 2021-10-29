@@ -16,7 +16,7 @@ function Home(props) {
           <h3>Send them something they can't get on their phone!</h3>
           <br />
           <h5>
-            "My friends were so surprised, they actually started inviting my out
+            "My friends were so surprised, they actually started inviting me out
             again!!!" -- Erika 28
           </h5>
           <br />
@@ -36,7 +36,7 @@ function Home(props) {
           <h1>What would you like to send?</h1>
         </Col>
         <Col className="m-4">
-          <Link to="/postcard">
+          <Link to="/nopicpostcard">
             <Button color="primary" block>
               Postcards without Pictures?{" "}
             </Button>

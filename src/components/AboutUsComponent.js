@@ -53,7 +53,7 @@ class About extends Component {
               <img src="../assets/images/married.jpg" />
             </Col>
             <Col md="12">
-              I am open to any criticisms or critiques that nayone might offer,
+              I am open to any criticisms or critiques that anyone might offer,
               I am only looking to get better and can't wait to find a place to
               call home. I am looking to spend the next 20 years of my life with
               one employer before I retire. If that next employer is not the
